@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use App;
+use App\Team;
 use DB;
 
 class TeamsController extends Controller
@@ -17,9 +17,9 @@ class TeamsController extends Controller
       $teams = App\Team::all();
       return view('team.teams', compact('teams'));
     }
-    public function show(Team $id)
+    public function show($id)
     {
-      $teams = Team::find($id);
-      return view('team.teamsPlayer', compact('teams'));
+      $team = Team::find($id);
+      return view('team.teamsPlayer', compact('team'));
     }
 }

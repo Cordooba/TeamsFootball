@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-  Lista de Equipos
+  Lista de Jugadores
 @endsection
 
 @section('style')
@@ -9,7 +9,7 @@
     background-color: lightgrey;
   }
   .h{
-    font-size: 10em;
+    font-size: 8em;
   }
   .team-block{
     background-color: grey;
@@ -29,10 +29,10 @@
 
 @section('content')
   <div class="container">
-    <h1 class="text-center h"><ins>Lista de Equipos</ins></h1>
-    @foreach($teams as $team)
+    <h1 class="text-center h"><ins>Lista de Jugadores</ins></h1>
+    @foreach($players as $player)
       <div class="team-block">
-        <p class="text-center"><a href="equipos/{{$team->id}}"><strong>{{$team->name}}</strong></a></p>
+        <p class="text-center"><a href="players/{{$player->id}}"><strong>{{$player->name}}</strong></a></p>
       </div>
     @endforeach
   </div>

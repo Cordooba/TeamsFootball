@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('title')
-  {{$teams->name}}
+  {{$team->name}}
 @endsection
 
 @section('style')
@@ -14,6 +14,20 @@
   .team-block{
     background-color: grey;
     color: #fff;
+    position: absolute;
+    left: 440px;
+    padding: 10px;
+    top: 200px;
+    width: 400px;
+  }
+  .player-block{
+    background-color: lightblue;
+    color: #fff;
+    position: absolute;
+    left: 440px;
+    padding: 10px;
+    top: 440px;
+    width: 400px;
   }
 @endsection
 
@@ -22,6 +36,16 @@
     <h1 class="text-center h"><ins>Lista de Equipos</ins></h1>
       <div class="team-block">
         <p class="text-center"><strong>{{$team->name}}</strong></p>
+        <p class="text-center"><ins>Ciudad: {{$team->city}}</ins></p>
+        <p class="text-center"><ins>Fundación: {{$team->foundation}}</ins></p>
+        <p class="text-center"><ins>Socios: {{$team->supporters}}</ins></p>
+        <p class="text-center"><ins>Estadio: {{$team->stadium}}</ins></p>
+      </div>
+      <div class="player-block">
+        <p class="text-center"><strong>Lista de jugadores del {{$team->name}}</strong></p>
+        @foreach($team->player as $player)
+          <p class="text-center"><ins>{{$player->name}}</ins></p>
+        @endforeach
       </div>
   </div>
 @stop
