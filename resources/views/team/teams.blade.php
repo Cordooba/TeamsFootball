@@ -32,7 +32,7 @@
     <h1 class="text-center h"><ins>Lista de Equipos</ins></h1>
     @foreach($teams as $team)
       <div class="team-block">
-        <p class="text-center"><a href="equipos/{{$team->id}}"><strong>{{$team->name}}</strong></a></p>
+        <p class="text-center"><a href="{{ url('teams/'.$team->id) }}"><strong>{{$team->name}}</strong></a></p>
       </div>
     @endforeach
   </div>

@@ -43,8 +43,8 @@
       </div>
       <div class="player-block">
         <p class="text-center"><strong>Lista de jugadores del {{$team->name}}</strong></p>
-        @foreach($team->player as $player)
-          <p class="text-center"><ins>{{$player->name}}</ins></p>
+        @foreach($team->players as $player)
+          <p class="text-center"><ins><a href="{{ url('players/'.$player->id) }}">{{$player->name}}</a></ins></p>
         @endforeach
       </div>
   </div>

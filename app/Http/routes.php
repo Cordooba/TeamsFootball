@@ -12,8 +12,12 @@
 */
 
 
-Route::get('/', 'TeamsController@index');
-Route::get('equipos/{team}', 'TeamsController@show')->where('team','[0-9]+');
+Route::get('/', function(){
+  return redirect('teams');
+});
+
+Route::get('teams', 'TeamsController@index');
+Route::get('teams/{team}', 'TeamsController@show')->where('team','[0-9]+');
 Route::get('players/{player}', 'PlayersController@show')->where('player','[0-9]+');
 Route::get('players', 'PlayersController@index');
 
