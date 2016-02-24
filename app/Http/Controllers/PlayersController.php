@@ -18,9 +18,9 @@ class PlayersController extends Controller
     $players = App\Player::all();
     return view('player.players', compact('players'));
   }
-  public function show($id)
+  public function show(Player $player)
   {
-    $player = Player::find($id);
+    // $player = Player::find($id);
     return view('player.playerInfo', compact('player'));
   }
 }
