@@ -22,4 +22,12 @@ class TeamsController extends Controller
       // $team = Team::find($id);
       return view('team.teamsPlayer', compact('team'));
     }
+    public function store(Request $request, Team $team)
+    {
+      $team->addTeam(
+        new Team( $request->all() )
+      );
+
+      return back();
+    }
 }

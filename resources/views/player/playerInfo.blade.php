@@ -23,17 +23,50 @@
   p{
     padding: 5px;
   }
+  td{
+    font-size: 18px;
+    text-align: center;
+  }
 @endsection
 
 @section('content')
   <div class="container">
     <h1 class="text-center h"><ins>{{$player->name}}</ins></h1>
-    <div class="player-block">
-      <p class="text-center"><ins>Equipo: {{$player->team->name}}</ins></p>
-      <p class="text-center"><ins>Nacionalidad: {{$player->nationality}}</ins></p>
-      <p class="text-center"><ins>Posición: {{$player->position}}</ins></p>
-      <p class="text-center"><ins>Fecha de Nacimiento: {{$player->birthday}}</ins></p>
-      <p class="text-center"><ins>Dorsal: {{$player->dorsal}}</ins></p>
-    </div>
+    <table class="player-block" border="1">
+      <tbody>
+        <tr>
+          <td>
+              <p class="text-center">Equipo: {{$player->team->name}}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+              <p class="text-center">Nacionalidad: {{$player->nationality}}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+              <p class="text-center">Posición: {{$player->position}}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p class="text-center">Fecha de Nacimiento: {{$player->birthday}}</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+              <p class="text-center">Dorsal: {{$player->dorsal}}</p>
+          </td>
+        </tr>
+        <tfoot>
+          <tr>
+            <td>
+              &copy; ADA ITS
+            </td>
+          </tr>
+        </tfoot>
+      </tbody>
+      </table>
   </div>
 @stop

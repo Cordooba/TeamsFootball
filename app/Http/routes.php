@@ -18,6 +18,7 @@ Route::get('/', function(){
 
 Route::get('teams', 'TeamsController@index');
 Route::get('teams/{team}', 'TeamsController@show')->where('team','[0-9]+');
+Route::post('teams/{team}', 'TeamsController@store')->where('team','[0-9]+');
 Route::get('players/{player}', 'PlayersController@show')->where('player','[0-9]+');
 Route::get('players', 'PlayersController@index');
 

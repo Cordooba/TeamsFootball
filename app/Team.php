@@ -16,4 +16,8 @@ class Team extends Model
     return $this->hasMany(Player::class);
   }
 
+  public function addTeam (Team $team) {
+     return $this->save($team);
+   }
+
 }
