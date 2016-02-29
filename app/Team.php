@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Player;
+use DB;
 
 class Team extends Model
 {
@@ -17,7 +18,7 @@ class Team extends Model
   }
 
   public function addTeam (Team $team) {
-     return $this->save($team);
+     return $this->create($team);
    }
 
 }
