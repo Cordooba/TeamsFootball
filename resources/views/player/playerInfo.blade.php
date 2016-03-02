@@ -68,5 +68,6 @@
         </tfoot>
       </tbody>
       </table>
+      <a href="{{ URL::to('/') }}">Página Principal</a>  
   </div>
 @stop

@@ -36,6 +36,9 @@
   td{
   text-align: center;
   }
+  #enlace{
+    font-size:15px;
+  }
 @endsection
 
 @section('content')
@@ -69,8 +72,8 @@
     <h2>Añadir jugador:</h2>
      <form action="" method="post">
        <div class="form-group">
-         <label for="team">Equipo:</label>
-         <input type="text" name="team" class="form-control">
+         <label for="team_id">Equipo:</label>
+         <input type="text" name="team_id" class="form-control">
        </div>
        <div class="form-group">
          <label for="name">Nombre:</label>
@@ -96,5 +99,6 @@
          <button type="submit" class="btn btn-primary">Añadir jugador</button>
        </div>
      </form>
+     <a href="{{ URL::to('/') }}">Página Principal</a>  
   </div>
 @stop

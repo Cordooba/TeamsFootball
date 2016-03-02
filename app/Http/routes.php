@@ -16,11 +16,17 @@ Route::get('/', function(){
   return redirect('teams');
 });
 
+Route::get('teams/{team}/edit', 'TeamsController@edit')->where('team','[0-9]+');
+Route::patch('teams/{team}', 'TeamsController@update')->where('team','[0-9]+');
+
 Route::get('teams', 'TeamsController@index');
 Route::get('teams/{team}', 'TeamsController@show')->where('team','[0-9]+');
-Route::post('teams/{team}', 'TeamsController@store')->where('team','[0-9]+');
+Route::post('teams', 'TeamsController@store');
 Route::get('players/{player}', 'PlayersController@show')->where('player','[0-9]+');
 Route::get('players', 'PlayersController@index');
+Route::post('players','PlayersController@store');
+
+
 
 
 /*
